@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<!-- Created By SachinSharma  -->
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Responsive Navbar with Search Box | CodingNepal</title>
+      <link rel="stylesheet" href="navbar.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+   </head>
+   <body>
+      <nav>
+         <div class="menu-icon">
+            <span class="fas fa-bars"></span>
+         </div>
+         <div class="logo">
+            <!-- <img src="logo.jpeg" alt=""> -->
+           SachinSharma
+         </div>
+         <div class="nav-items">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Blogs</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Feedback</a></li>
+         </div>
+         <div class="search-icon">
+            <span class="fas fa-search"></span>
+         </div>
+         <div class="cancel-icon">
+            <span class="fas fa-times"></span>
+         </div>
+         <form action="#">
+            <input type="search" class="search-data" placeholder="Search" required>
+            <button type="submit" class="fas fa-search"></button>
+         </form>
+      </nav>
+
+          <div class="cont">
+
+
+
+            
+            
+          </div>
+
+
+       <div class="content">
+         <header class="space">Do You Know Using of Drug in India Have HArmful Effect 
+            
+            Now Lets Know  
+         </header>
+         <div class="space text">
+             using HTML CSS & JavaScript 
+         </div>
+      </div> 
+      <script>
+         const menuBtn = document.querySelector(".menu-icon span");
+         const searchBtn = document.querySelector(".search-icon");
+         const cancelBtn = document.querySelector(".cancel-icon");
+         const items = document.querySelector(".nav-items");
+         const form = document.querySelector("form");
+         menuBtn.onclick = ()=>{
+           items.classList.add("active");
+           menuBtn.classList.add("hide");
+           searchBtn.classList.add("hide");
+           cancelBtn.classList.add("show");
+         }
+         cancelBtn.onclick = ()=>{
+           items.classList.remove("active");
+           menuBtn.classList.remove("hide");
+           searchBtn.classList.remove("hide");
+           cancelBtn.classList.remove("show");
+           form.classList.remove("active");
+           cancelBtn.style.color = "#ff3d00";
+         }
+         searchBtn.onclick = ()=>{
+           form.classList.add("active");
+           searchBtn.classList.add("hide");
+           cancelBtn.classList.add("show");
+         }
+      </script>
+      <div class="row" id="whats_new">
+         <span class="col-md-1 col-xs-3 padded1">
+         <label class="label css_blink" style="color: rgb(89, 114, 58)">What's New</label> </span>
+         <span class="col-md-11 col-xs-9 pad-t"> 
+         <marquee behavior="scroll" direction="left" id="nw_up" scrollamount="5">
+         
+      
+            <span><img class="image-responsive" alt="new" src=""><a href="" rel="tooltip" title="Covid-19 guidance" target="_blank">	 Notice of Advisory for registration of blood centres on E-rakhtkosh</a></span><span><img class="image-responsive" alt="new" src="/opencms/export/sites/CDSCO_WEB/Image_folder/new1.gif"><a href="/opencms/export/sites/CDSCO_WEB/Pdf-documents/notice15april21.pdf" rel="tooltip" title="Covid-19 guidance" target="_blank">	All the stakeholders are requested to voluntarily fill and submit customer feedback form available in the website while visiting PRO at CDSCO (HQ)</a></span>
+      <span><img class="image-responsive" alt="new" src=""><a href=" " rel="tooltip" title="Covid-19 guidance" target="_blank">	Notice regarding Guidance for approval Covid-19 vaccine in India for restricted use in emergency situation which are already approved for restricted use by US FDA EMA, UK MHRA, PMDA Japan or which are listed in WHO Emergency use listing</a><small class="pad-left5 yellow">	15th April,2021</small> 
+         </span>	
+         
+         <span><!--<img class=" ">--><a href="" rel="tooltip" title="DCGI Message 2020" target="_blank">DCGI Message 2022</a><small class="pad-left5 yellow">01 Jan 2022</small>
+         </span>	
+         
+         <span><a href="#">
+      For Medical devices which are under voluntary registrations, the file number generated is the registration number of firm.
+         </a></span>
+      
+         <span>
+         <a href="/opencms/opencms//en/About-us/E-GOV-cell-at-CDSCO/index.html" rel="tooltip">E-GOV cell at CDSCO</a>
+         </span>
+            
+         <span>
+         <a href="#" rel="tooltip" target="_blank">CDSCO,HQ accredited with Quality Management Systems IS/ISO 9001:2015 by BIS</a>		</span>
+            
+      
+               
+      
+      
+            </marquee> 
+               
+               <i class="fa fa-pause white st_cdsco" value="Stop Marquee" title="Pause" onclick="document.getElementById('nw_up').stop();"></i>
+               <i class="fa fa-play white st_cdsco" value="Start Marquee" title="Play" onclick="document.getElementById('nw_up').start();"></i>
+            </span>
+      
+      </div>
+        
+   
+      </div>
+      
+     
+   </body>
+</html>

@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Testing And Central Laboratory</title>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .flexbox {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            width: 100%;
+            flex-wrap: wrap;
+            margin-top: 4em;
+        }
+
+        .flexcard {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            width: 20%;
+            align-items: baseline;
+            height: 442px;
+            border-radius: 20px;
+        }
+
+        .flexcardNumber {
+            width: 70%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+            margin: 10px 0px;
+            border-radius: 0px 50px 50px 0px;
+            font-family: 'Jost', sans-serif;
+            color: #0d0707;
+            text-shadow: 0px 3px 5px black;
+            font-weight: 500;
+            font-size: 12px;
+            position: relative;
+        }
+
+        .flexcardTitle {
+            font-family: 'Jost', sans-serif;
+            text-transform: uppercase;
+            font-size: 26px;
+            font-weight: 400;
+        }
+
+        .flexcardText {
+            font-family: 'Jost', sans-serif;
+            text-align: center;
+            font-weight: 300;
+        }
+
+        .flexcardNumber:before {
+            content: '';
+            width: 34px;
+            height: 90px;
+            position: absolute;
+            left: -33px;
+            top: 0px;
+            border-radius: 50px 0px 0px 50px;
+            z-index: -1;
+            background: #dedede;
+            /* background: -webkit-linear-gradient(bottom, #95B7A2, #AED2BC); */
+            background: -moz-linear-gradient(bottom, #95B7A2, #AED2BC);
+            /* background: linear-gradient(to top, #95B7A2, #AED2BC); */
+            ;
+        }
+
+        .flexcardNumber:after {
+            content: '';
+            width: 25px;
+            height: 40px;
+            position: absolute;
+            left: -25px;
+            bottom: -40px;
+            border-radius: 50px 0px 0px 50px;
+            z-index: -1;
+        }
+
+        .flex {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin: 10px auto;
+        }
+
+        img.flexcardimgItem {
+            width: 50%;
+        }
+
+        /* GREEN CARD */
+
+        .flexcardGreen {
+            background: #dedede;
+            box-shadow: 4px 4px 26px #AED2BC;
+        }
+
+        .flexcardNumberGreen {
+            background: #dedede;
+            background: -webkit-linear-gradient(right, #dedede, #AED2BC);
+            background: -moz-linear-gradient(right, #dedede, #AED2BC);
+            background: linear-gradient(to left, #dedede, #AED2BC);
+            box-shadow: 0px 2px 2px #AED2BC;
+        }
+
+        .flexcardNumberGreen:before {
+            background: #dedede;
+        }
+
+        .flexcardNumberGreen:after {
+            background: #95b7a2;
+        }
+
+        /* BLUE CARD */
+
+        .flexcardBlue {
+            background: #dedede;
+            box-shadow: 4px 4px 26px #8a1f0a;
+        }
+
+        .flexcardNumberBlue {
+            background: #dedede;
+            background: -webkit-linear-gradient(right, #dedede, #92E8EB);
+            background: -moz-linear-gradient(right, #FDFFFE, #92E8EB);
+            background: linear-gradient(to left, #FDFFFE, #92E8EB);
+            box-shadow: 0px 2px 2px #92E8EB;
+        }
+
+        .flexcardNumberBlue:before {
+            background: #92E8EB;
+        }
+
+        .flexcardNumberBlue:after {
+            background: #71bdbf;
+        }
+
+        /* ORANGE CARD */
+
+        .flexcardOrange {
+            background: #dedede;
+            box-shadow: 4px 4px 26px #F68404;
+        }
+
+        .flexcardNumberOrange {
+            background: #dedede;
+            background: -webkit-linear-gradient(right, #FDFFFE, #F68404);
+            background: -moz-linear-gradient(right, #FDFFFE, #F68404);
+            background: linear-gradient(to left, #FDFFFE, #F68404);
+            box-shadow: 0px 2px 2px #F68404;
+        }
+
+        .flexcardNumberOrange:before {
+            background: #F68404;
+        }
+
+        .flexcardNumberOrange:after {
+            background: #d06f02;
+        }
+
+        /* PİNK CARD */
+
+        .flexcardPink {
+            background: #dedede;
+            position: relative;
+            box-shadow: 4px 4px 26px #d5df7a;
+            border-radius: 20px 20px 0px 20px;
+        }
+
+        .flexcardPink:before {
+            content: '';
+            width: 0px;
+            height: 50px;
+            /* background: red; */
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            border-left: 100px solid transparent;
+            border-bottom: 90px solid #d1cf83;
+        }
+
+        .flexcardNumberPink {
+            background: #FDFFFE;
+            background: -webkit-linear-gradient(right, #FDFFFE, #F34EAE);
+            background: -moz-linear-gradient(right, #FDFFFE, #F34EAE);
+            background: linear-gradient(to left, #FDFFFE, #F34EAE);
+            box-shadow: 0px 2px 2px #F34EAE;
+        }
+
+        .flexcardNumberPink:before {
+            background: #39dae2;
+        }
+
+        .flexcardNumberPink:after {
+            background: #0ea1a3;
+        }
+
+        /* RESPONSİVE */
+
+        @media only screen and (max-width: 1035px) {
+
+            .flexcard {
+                width: 35%;
+                margin-top: 20px;
+            }
+
+            img.flexcardimgItem {
+                width: 30%;
+            }
+
+        }
+
+        @media only screen and (max-width: 1035px) {
+
+            .flexcard {
+                width: 70%;
+            }
+
+
+        }
+
+
+
+        .addre {
+            margin-top: -46px;
+            padding: 5px;
+        }
+
+        .addre ul li a {
+            text-decoration: none;
+        }
+
+        .addre1 {
+            margin-top: -16px;
+        }
+
+        .addre1 ul li a {
+            text-decoration: none;
+        }
+
+        .addre2 {
+            margin-top: -28px;
+        }
+
+        .addre2 ul li a {
+            text-decoration: none;
+        }
+
+        .addre12 ul li a {
+            text-decoration: none;
+
+        }
+
+        .testing {
+            margin-top: 33px;
+            align-items: center;
+            margin-left: 8px;
+            padding: 5px;
+            /* border: 2px solid red; */
+            border-radius: 8px;
+            font-size: 23px;
+            background: #efb2b291;
+            font-weight: 800;
+            color: #0d4e2e;
+            display: flex;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="tit1" style="
+    font-size: 43px;
+    justify-content: center;
+    box-sizing: border-box;
+    background: #958787;
+    align-items: center;
+    display: flex;
+    border-radius: 8px;
+    font-weight: 600;
+">
+        Some Central Laboratories For Testing Where You Can Go.
+    </div>
+   
+    <div class="testing">
+        
+        
+            The Sports Test is meant to test the athlete’s ability to demonstrate excellent muscle endurance strength in the
+        lower extremity; the ability to effectively push off as well as have a controlled landing (we describe as
+        “absorption”) onto the involved lower extremity in a lateral and a rotational direction; and the ability to flex
+        and extend into a lunge position without pain, fatigue, or compensation.
+
+        
+
+        
+        
+
+    </div>
+    <div class="flexbox">
+        <div class="flexcard flexcardGreen">
+            <div class="flexcardNumber flexcardNumberGreen">Central Drugs Laboratory (CDL) Kolkata</div>
+            <div class="flex flexcardTitle">Actively Work </div>
+            <div class="flex flexcardText">Certificate of Accreditation from National Accreditation Board for Testing
+                and Calibration
+                Laboratories(NABL).<br><br>
+            </div>
+            <!-- <button>
+                <a href="http://">Know More </a>
+            </button> -->
+            <div class="addre12">
+                <ul>
+                    <li>
+                        <strong>Address :</strong> 3, KYD STREET <br> KOLKOTA-700016
+
+
+                    </li>
+                    <li>
+                        Phone : <a href="tel:033-22299380">CLICK TO CALL</a>
+
+                    </li>
+                    <li>
+                        <a href="mailto:cdlkol@cdsco.nic.in">Mail Us </a>
+
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div class="flexcard flexcardBlue">
+            <div class="flexcardNumber flexcardNumberBlue">CENTRAL DRUGS TESTING LABORATORY HYDERABAD</div>
+            <div class="flex flexcardTitle">Actively Work </div>
+            <div class="flex flexcardText">Accredited By: NABL (ISO/IEC-17025:2017 in Chemical Testing)
+                <br><br>
+
+            </div>
+            <div class="addre">
+                <h5>
+                    <ul>
+                        <li>Director I/c (CDTL Hyderabad):
+
+                            Smt. A. Visala
+
+                        </li>
+                        <li>
+                            Address: Central Drugs Standard Control Organization Zonal Office,
+
+                            CDSCO Bhavan, S.R. Nagar, Hyderabad -500038
+
+                        </li>
+                        <li>
+                            Phone : <a href="tel:040 23811327">CLICK TO CALL</a>
+                        </li>
+                        <li>
+                            <a href="mailto:cdtlhyd@cdsco.nic.in">Mail Us </a>
+                        </li>
+                    </ul>
+
+
+
+
+                </h5>
+            </div>
+
+        </div>
+
+        <div class="flexcard flexcardOrange">
+            <div class="flexcardNumber flexcardNumberOrange">Central Drugs Testing Laboratory (CDTL) Chennai , Tamil
+                Nadu</div>
+            <div class="flex flexcardTitle">Actively Works </div>
+            <div class="flex flexcardText">Under the National List Of Approved Testing Laboratories
+
+
+            </div>
+            <div class="addre1">
+                <h5>
+                    <ul>
+                        <li>
+                            Director I/C (CDTL Chennai):
+                            Smt.C Vijayalakshmi
+                        </li>
+                        <li>
+                            <strong> Address: </strong> Drug Testing Laboratory, Govt. of India, 37, Naval Hospital
+                            Road,
+                            Periamet, Campus G.M.S.D., Chennai, 600 003
+                        </li>
+                        <li>
+                            Phone : <a href="tel:044-25610402">CLICK TO CALL</a>
+
+
+                        </li>
+                        <li>
+                            Phone : <a href="tel:044-25610205">CLICK TO CALL</a>
+                        </li>
+                        <li>
+                            <a href="mailto:cdtlchennai@cdsco.nic.in">Mail Us </a>
+                        </li>
+
+                    </ul>
+                </h5>
+            </div>
+            <!-- <div class="flex flexcardImg"><img class="flexcardimgItem"
+                    src="https://cdn.pixabay.com/photo/2017/01/10/23/01/seo-1970475_960_720.png" alt=""></div> -->
+        </div>
+
+        <div class="flexcard flexcardPink">
+            <div class="flexcardNumber flexcardNumberPink">Central Drugs Testing Laboratory (CDTL) Mumbai</div>
+            <div class="flex flexcardTitle">Actively Works </div>
+            <div class="flex flexcardText">Accredited By: NABL (ISO/IEC-17025:2017 in Chemical and Biological Testing)
+
+            </div>
+            <div class="addre2">
+                <ul>
+                    <li>Director of the Laboratory : Dr. Raman Mohan Singh
+
+
+                    </li>
+                    <li>
+                        <strong>Address : </strong> FDA Bhavan, Bellasis Road, Government Medical Stores Depot (GMSD)
+                        Compound,
+                        Mumbai Central, Mumbai-400 008. .
+                    </li>
+                    <li>
+                        Phone : <a href="tel:022-2300 2309">CLICK TO CALL</a>
+
+
+                    </li>
+                    <li>
+                        Phone : <a href="tel:022-2300 2138">CLICK TO CALL</a>
+                    </li>
+                    <li>
+                        <a href="mailto:cdtlmumbai@gmail.com">Mail Us </a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+
+
+        <!-- Another flex section  Section  -->
+
+        <div class="tit2" style="
+        font-size: 43px;
+        justify-content: center;
+        box-sizing: border-box;
+        background: #958787;
+        align-items: center;
+        display: flex;
+        border-radius: 8px;
+        margin-top: 1em;
+        font-weight: 600;
+        width: 100%;
+    ">
+            Some Other Laboratories For Testing Where You Can Go.
+        </div>
+        <div class="flexbox">
+            <div class="flexcard flexcardGreen">
+                <div class="flexcardNumber flexcardNumberGreen">Vimta Laboratories Ltd. Life Sciences Facility,</div>
+                <div class="flex flexcardTitle">Actively Work </div>
+                <div class="flex flexcardText">Approved testing Laboratories in State Andhra Pradesh <br><br>
+
+                </div>
+                <!-- <button>
+                <a href="http://">Know More </a>
+            </button> -->
+                <div class="addre12">
+                    <ul>
+                        <li>
+                            <strong>Address :</strong> , Alexandria park, (Formerly S.P.
+                            Biotech Park), Genome Valley, Shameerpet Mandal, Hyderabad- 500 078.
+
+                        </li>
+                        <li>
+                            Phone : <a href="tel:033-22299380">CLICK TO CALL</a>
+
+                        </li>
+                        <li>
+                            <a href="mailto:cdlkol@cdsco.nic.in">Mail Us </a>
+
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <div class="flexcard flexcardBlue">
+                <div class="flexcardNumber flexcardNumberBlue">M/s Bio Drug Testing & Analytical Laboratories, </div>
+                <div class="flex flexcardTitle">Actively Work </div>
+                <div class="flex flexcardText">Approved testing Laboratories in State Bihar<br><br>
+
+
+                </div>
+                <div class="addre">
+                    <h5>
+                        <ul>
+
+                            <li>
+                                Address:Road No. -3, Rajinder Nagar,
+                                jinder Nagar,
+                                Patna- 800016
+
+                            </li>
+                            <li>
+                                Phone : <a href="tel:0612 2683277">CLICK TO CALL</a>
+                            </li>
+                            <!-- <li>
+                                <a href="mailto:cdtlhyd@cdsco.nic.in">Mail Us </a>
+                            </li> -->
+                        </ul>
+
+
+
+
+                    </h5>
+                </div>
+
+            </div>
+
+            <div class="flexcard flexcardOrange">
+                <div class="flexcardNumber flexcardNumberOrange">M/s Konark Research Foundation (A div. Of Konark
+                    Fixtures Limited), Daman </div>
+                <div class="flex flexcardTitle">Actively Works in Kachigam of state Daman. </div>
+                <div class="flex flexcardText">Under the National List Of Approved Testing Laboratories
+
+
+                </div>
+                <div class="addre1">
+                    <h5>
+                        <ul>
+
+                            <li>
+                                <strong> Address: </strong> Survey No.- 338/1,
+                                Kachigam, Daman.
+
+                            </li>
+                            <li>
+                                Phone : <a href="tel:0260 2244766 ">CLICK TO CALL</a>
+
+
+                            </li>
+                            <li>
+                                Phone : <a href="tel:044-25610205">CLICK TO CALL</a>
+                            </li>
+                            <li>
+                                <a href="mailto:krfdaman@rediffmail.com">Mail Us </a>
+                            </li>
+
+                        </ul>
+                    </h5>
+                </div>
+                <!-- <div class="flex flexcardImg"><img class="flexcardimgItem"
+                    src="https://cdn.pixabay.com/photo/2017/01/10/23/01/seo-1970475_960_720.png" alt=""></div> -->
+            </div>
+
+            <div class="flexcard flexcardPink">
+                <div class="flexcardNumber flexcardNumberPink">M/s Radicura Pharmaceuticals Pvt. Ltd</div>
+                <div class="flex flexcardTitle">Approved testing Laboratories in State (Delhi)</div>
+                <div class="flex flexcardText">
+                </div>
+                <div class="addre2">
+                    <ul>
+
+                        <li>
+                            <strong>Address : </strong> ., B-117, Okhla Indl. Area, Phase-I, New Delhi.
+
+
+                        </li>
+                        <li>
+                            Phone : <a href="tel:26816352">CLICK TO CALL</a>
+
+
+                        </li>
+                        <li>
+                            <a href="mailto:radicura2@hotmail.com">Mail Us </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+
+            <!-- another scecvtion for Testing  -->
+
+
+            <div class="tit2" style="
+        font-size: 43px;
+        justify-content: center;
+        box-sizing: border-box;
+        background: #958787;
+        align-items: center;
+        display: flex;
+        border-radius: 8px;
+        margin-top: 1em;
+        font-weight: 600;
+        width: 100%;
+    ">
+                Some Other Laboratories For Testing Where You Can Go.
+            </div>
+            <div class="flexbox">
+                <div class="flexcard flexcardGreen">
+                    <div class="flexcardNumber flexcardNumberGreen">M/s Atjuna Natural Extracts Ltd.,</div>
+                    <div class="flex flexcardTitle">Actively Work </div>
+                    <div class="flex flexcardText">Approved testing Laboratories in State Kerala <br><br>
+
+                    </div>
+                    <!-- <button>
+                <a href="http://">Know More </a>
+            </button> -->
+                    <div class="addre12">
+                        <ul>
+                            <li>
+                                <strong>Address :</strong> Pb No. 126, Bank Road, Alwaye- 683 101, Kerala, India.
+                            </li>
+                            <li>
+                                Phone : <a href="tel:033-2622655
+                            ">CLICK TO CALL</a>
+
+                            </li>
+                            <li>
+                                <a href="mailto: mail@arjunanatural.com">Mail Us </a>
+
+                            </li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+                <div class="flexcard flexcardBlue">
+                    <div class="flexcardNumber flexcardNumberBlue">M/s Askot Analytical Services Lab. House, </div>
+                    <div class="flex flexcardTitle">Actively Work </div>
+                    <div class="flex flexcardText">Approved testing Laboratories in State Maharashtra<br><br>
+
+
+                    </div>
+                    <div class="addre">
+                        <h5>
+                            <ul>
+
+                                <li>
+                                    <strong>Address :</strong>Plot No. F-13, Opp. Speez MIDC,
+                                    Andheri (E), Mumbai- 400093
+
+                                </li>
+                                <li>
+                                    Phone : <a href="tel:022 28360057
+                                ">CLICK TO CALL</a>
+                                </li>
+                                <!-- <li>
+                                <a href="mailto:cdtlhyd@cdsco.nic.in">Mail Us </a>
+                            </li> -->
+                            </ul>
+
+
+
+
+                        </h5>
+                    </div>
+
+                </div>
+
+                <div class="flexcard flexcardOrange">
+                    <div class="flexcardNumber flexcardNumberOrange">The Madras Research and Analytical Laboratories in
+                        Tamilnadu </div>
+                    <div class="flex flexcardTitle">Actively Works in chennai of state Tamilnadu </div>
+                    <div class="flex flexcardText">Under the National List Of Approved Testing Laboratories
+
+
+                    </div>
+                    <div class="addre1">
+                        <h5>
+                            <ul>
+
+                                <li>
+                                    <strong> Address: </strong> Old Mahabalipuram Road,
+                                    Karapakkam, Chennai- 600 096
+
+
+                                </li>
+                                <li>
+                                    Phone : <a href="tel:0260 2244766 ">CLICK TO CALL</a>
+
+
+                                </li>
+                                <li> <a href="">Download lists of Labs</a></li>
+                                <!-- <li>
+                                Phone : <a href="tel:044-25610205">CLICK TO CALL</a>
+                            </li>
+                            <li>
+                                <a href="mailto:krfdaman@rediffmail.com">Mail Us </a>
+                            </li> -->
+
+                            </ul>
+                        </h5>
+                    </div>
+                    <!-- <div class="flex flexcardImg"><img class="flexcardimgItem"
+                    src="https://cdn.pixabay.com/photo/2017/01/10/23/01/seo-1970475_960_720.png" alt=""></div> -->
+                </div>
+
+                <div class="flexcard flexcardPink">
+                    <div class="flexcardNumber flexcardNumberPink">M/s Choksi Laboratories Ltd.,</div>
+                    <div class="flex flexcardTitle">Approved testing Laboratories in State Haryana </div>
+                    <div class="flex flexcardText">
+                    </div>
+                    <div class="addre2">
+                        <ul>
+
+                            <li>
+                                <strong>Address : </strong> Plot No. 362, Industrial Area, Phase II , Panchkula, Haryana
+
+
+                            </li>
+                            <li>
+                                Phone : <a href="tel:0172-5048600-01">CLICK TO CALL</a>
+
+
+                            </li>
+                            <li>
+                                <a href="mailto:pkl.choksi@gmail.com">Mail Us </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
